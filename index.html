@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Album</title>
+<style>
+  .album {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .photo:hover {
+    transform: scale(1.1);
+  }
+
+  .photo:focus {
+    transform: scale(1.5);
+  }
+</style>
+</head>
+<body>
+
+<div class="album">
+  <div class="photo" tabindex="0" onclick="enlargePhoto('photo1')">
+    <img src="https://via.placeholder.com/150">
+  </div>
+  <div class="photo" tabindex="0" onclick="enlargePhoto('photo2')">
+    <img src="https://via.placeholder.com/150">
+  </div>
+  <div class="photo" tabindex="0" onclick="enlargePhoto('photo3')">
+    <img src="https://via.placeholder.com/150">
+  </div>
+</div>
+
+<script>
+  function enlargePhoto(photoId) {
+    const photo = document.getElementById(photoId);
+    photo.focus();
+  }
+</script>
+
+</body>
+</html>
